@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: #111827;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            transition: background-image 1.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen text-white flex flex-col items-center p-4">
+
+    <!-- Loader -->
+    <div id="loader" class="hidden fixed inset-0 flex items-center justify-center bg-black/50 z-50">
+        <div class="w-16 h-16 border-4 border-t-transparent border-blue-500 rounded-full animate-spin"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="w-full max-w-4xl flex justify-between items-center mb-6 p-2 px-5 rounded-xl shadow-2xl">
+        <h1 class="text-3xl text-white font-bold">WEATHER <span class="bi bi-cloud-sun-fill text-yellow-400"></span></h1>
+        <button id="themeToggle" class="border-yellow-400 border px-3 py-1 rounded hover:bg-yellow-400 hover:text-black">Dark/Light</button>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="w-full max-w-4xl flex items-center mb-6 bg-gradient-to-r from-purple-600/30 via-pink-500/30 to-red-500/30 rounded-xl p-1 shadow-[0_4px_30px_rgba(0,0,0,0.3)] backdrop-blur-md border border-white/10">
+        <input id="cityInput" type="text" placeholder="Type a city name..."
+            class="flex-grow px-5 py-3 rounded-l-xl bg-gray-900 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400 transition-all duration-300" />
+        <button id="searchBtn"
+            class="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-pink-500 to-red-500 rounded-r-xl font-semibold text-white hover:from-pink-600 hover:to-red-600 hover:shadow-lg hover:shadow-pink-500/40 transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" />
+            </svg>
+            Search
+        </button>
+    </div>
+
+
+    <!-- Weather Info -->
+    <section id="weatherInfo" class="w-full max-w-4xl hidden transition-all duration-700 ease-in-out opacity-0">
+        <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-2xl flex flex-col md:flex-row gap-4">
+            <!-- Left -->
+            <div>
+                <h2 id="cityName" class="text-2xl font-bold"></h2>
+                <p id="localTime" class="text-sm opacity-80"></p>
+                <p id="weatherDesc" class="mt-2 capitalize"></p>
+                <p id="temperature" class="text-4xl font-bold mt-4"></p>
+            </div>
+            <!-- Right -->
+            <img id="weatherIcon" class="w-20 h-20 self-center" />
+        </div>
+
+        <!-- Forecast -->
+        <div id="forecast" class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-6"></div>
+    </section>
+
+    <!-- Recent Searches -->
+    <section id="recentSearches" class="mt-6 w-full max-w-4xl">
+        <h3 class="text-lg font-semibold mb-2">Recent Searches</h3>
+        <div id="searchList" class="flex gap-2 flex-wrap"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
