@@ -32,25 +32,24 @@
     </header>
 
     <!-- Search Bar -->
-    <!-- Search Bar -->
 <div
-    class="w-full max-w-4xl flex flex-col sm:flex-row items-stretch mb-6 
+    class="w-full max-w-4xl flex items-center mb-6 
     bg-gradient-to-r from-purple-600/30 via-pink-500/30 to-red-500/30 
     rounded-xl p-1 shadow-[0_4px_30px_rgba(0,0,0,0.3)] 
-    backdrop-blur-md border border-white/10 gap-2 sm:gap-0">
+    backdrop-blur-md border border-white/10">
 
     <input id="cityInput" type="text" placeholder="Type a city name..."
-        class="flex-grow px-4 py-3 rounded-lg sm:rounded-l-xl sm:rounded-r-none 
+        class="flex-grow min-w-0 px-5 py-3 rounded-l-xl 
         bg-gray-900 text-white placeholder-gray-300 
         focus:outline-none focus:ring-2 focus:ring-pink-400 
-        transition-all duration-300 text-base w-full" />
+        transition-all duration-300 text-base" />
 
     <button id="searchBtn"
-        class="flex items-center justify-center gap-2 px-5 py-3 
-        bg-gradient-to-r from-pink-500 to-red-500 rounded-lg sm:rounded-r-xl sm:rounded-l-none 
+        class="flex items-center gap-2 px-5 py-3 
+        bg-gradient-to-r from-pink-500 to-red-500 rounded-r-xl 
         font-semibold text-white hover:from-pink-600 hover:to-red-600 
         hover:shadow-lg hover:shadow-pink-500/40 
-        transition-all duration-300 w-full sm:w-auto">
+        transition-all duration-300 shrink-0">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
             viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -59,8 +58,6 @@
         Search
     </button>
 </div>
-
-
 
     <!-- Weather Info -->
     <section id="weatherInfo" class="w-full max-w-4xl hidden transition-all duration-700 ease-in-out opacity-0">
